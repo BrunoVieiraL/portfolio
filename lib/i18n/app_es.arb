@@ -1,0 +1,27 @@
+{
+    "@@locale": "es",
+    "language": "ES",
+    "@language": {
+        "description": ""
+    },
+    "contactMe": "Contáctame",
+    "@contactMe": {
+        "description": ""
+    },
+    "headerRole": "Desarrollador Móvil | Desarrollador de Flutter",
+    "@headerRole": {
+        "description": ""
+    },
+    "aboutMeCardTitle": "Acerca de mí",
+    "@aboutMeCardTitle": {
+        "description": ""
+    },
+    "aboutMeCardText": "¡Hola! Soy Bruno y llevo 3 años trabajando con Flutter. Flutter es una de mis pasiones como desarrollador y mi principal objetivo es crear aplicaciones hermosas, rápidas y multiplataforma con él, ofreciendo funciones rápidamente junto con un código claro y fácil de entender.",
+    "@aboutMeCardText": {
+        "description": ""
+    },
+    "experienceCardTitle": "Experiencias",
+    "@experienceCardTitle": {
+        "description": ""
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "@@locale": "pt",
+    "language": "PT",
+    "@language": {
+        "description": ""
+    },
+    "contactMe": "Contate-me",
+    "@contactMe": {
+        "description": ""
+    },
+    "headerRole": "Desenvolvedor Mobile | Desenvolvedor Flutter",
+    "@headerRole": {
+        "description": ""
+    },
+    "aboutMeCardTitle": "Sobre Mim",
+    "@aboutMeCardTitle": {
+        "description": ""
+    },
+    "aboutMeCardText": "Olá! Eu sou o Bruno, trabalho com Flutter há 3 anos. Flutter é uma das minhas paixões como desenvolvedor e meu foco principal é entregar aplicativos bonitos, rápidos e multiplataforma com ele, entregando recursos rapidamente junto com um código limpo e simples de entender.",
+    "@aboutMeCardText": {
+        "description": ""
+    },
+    "experienceCardTitle": "Experiências",
+    "@experienceCardTitle": {
+        "description": ""
+    },
+    "experienceCardRoleLabel": "Cargo:",
+    "@experienceCardRoleLabel": {
+        "description": ""
+    },
+    "experienceCardEnterpriseLabel": "Empresa:",
+    "@experienceCardEnterpriseLabel": {
+        "description": ""
+    },
+    "experienceCardDateLabel": "Período:",
+    "@experienceCardDateLabel": {
+        "description": ""
+    },
+    "experienceCardRole": "Desenvolvedor Mobile Flutter",
+    "@experienceCardRole": {
+        "description": ""
+    },
+    "experienceCardEnterprise1": "Autônomo",
+    "@experienceCardEnterprise1": {
+        "description": ""
+    },
+    "experienceCardDate1": "nov de 2021 - nov de 2022",
+    "@experienceCardDate1": {
+        "description": ""
+    },
+    "experienceCardEnterprise2": "One System Group",
+    "@experienceCardEnterprise2": {
+        "description": ""
+    },
+    "experienceCardDate2": "nov de 2022 - fev de 2025",
+    "@experienceCardDate2": {
+        "description": ""
+    }
+}
