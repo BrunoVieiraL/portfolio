@@ -26,7 +26,7 @@ class PageIndicator extends StatelessWidget {
             padding: EdgeInsets.zero,
             onPressed: () {
               if (currentPageIndex == 0) {
-                onUpdateCurrentPageIndex(2);
+                return onUpdateCurrentPageIndex(2);
               }
               onUpdateCurrentPageIndex(currentPageIndex - 1);
             },
@@ -42,7 +42,7 @@ class PageIndicator extends StatelessWidget {
             padding: EdgeInsets.zero,
             onPressed: () {
               if (currentPageIndex == 2) {
-                onUpdateCurrentPageIndex(0);
+                return onUpdateCurrentPageIndex(0);
               }
               onUpdateCurrentPageIndex(currentPageIndex + 1);
             },

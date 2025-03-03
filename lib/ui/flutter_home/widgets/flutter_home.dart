@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/assets.dart';
 import 'package:portfolio/ui/flutter_home/view_model/flutter_home_view_model.dart';
-import 'package:portfolio/ui/flutter_home/widgets/actions_row.dart';
-import 'package:portfolio/ui/flutter_home/widgets/base_card.dart';
-import 'package:portfolio/ui/flutter_home/widgets/contact_row.dart';
 import 'package:portfolio/i18n/app_localizations.dart';
-import 'package:portfolio/ui/flutter_home/widgets/page_indicator.dart';
+import 'widgets.dart';
 
 class FlutterHome extends StatefulWidget {
   const FlutterHome({
@@ -84,60 +81,8 @@ class _FlutterHomeState extends State<FlutterHome>
                     controller: widget.viewModel.pageController,
                     scrollDirection: Axis.horizontal,
                     children: [
-                      BaseCard(
-                        backgroundColor: Color(0xFF1565C0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          spacing: 20,
-                          children: [
-                            SizedBox(),
-                            Text(
-                              localizations.aboutMeCardTitle,
-                              style: theme.textTheme.labelMedium,
-                            ),
-                            Center(
-                              heightFactor: 1.5,
-                              child: Text(
-                                localizations.aboutMeCardText,
-                                style: theme.textTheme.labelSmall,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      BaseCard(
-                        backgroundColor: Color(0xFFD0670B),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  localizations.experienceCardTitle,
-                                  style: theme.textTheme.labelSmall,
-                                  textAlign: TextAlign.center,
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.info,
-                                    color: theme.iconTheme.color,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Column(
-                            //   children: [
-                            //     Text('Role'),
-                            //     Text('Enterprise'),
-                            //     Text('Start-End Date'),
-                            //   ],
-                            // ),
-                          ],
-                        ),
-                      ),
+                      AboutMeCard(),
+                      ExperienceCard(),
                       BaseCard(
                         backgroundColor: Color(0xFF622E9F),
                         child: Column(

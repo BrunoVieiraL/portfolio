@@ -7,7 +7,7 @@
     "contactMe": "Contact Me",
     "@contactMe": {
         "description": ""
-    }, 
+    },
     "headerRole": "Mobile Developer | Flutter Developer",
     "@headerRole": {
         "description": ""
@@ -22,6 +22,42 @@
     },
     "experienceCardTitle": "Experiences",
     "@experienceCardTitle": {
+        "description": ""
+    },
+    "experienceCardTooltip": "See on Linkedin",
+    "@experienceCardTooltip": {
+        "description": ""
+    },
+    "experienceCardRoleLabel": "Role: ",
+    "@experienceCardRoleLabel": {
+        "description": ""
+    },
+    "experienceCardEnterpriseLabel": "Company: ",
+    "@experienceCardEnterpriseLabel": {
+        "description": ""
+    },
+    "experienceCardDateLabel": "Period: ",
+    "@experienceCardDateLabel": {
+        "description": ""
+    },
+    "experienceCardRole": "Flutter Developer",
+    "@experienceCardRole": {
+        "description": ""
+    },
+    "experienceCardEnterprise1": "Self-employed",
+    "@experienceCardEnterprise1": {
+        "description": ""
+    },
+    "experienceCardDate1": "nov 2021 - nov 2022",
+    "@experienceCardDate1": {
+        "description": ""
+    },
+    "experienceCardEnterprise2": "One System Group",
+    "@experienceCardEnterprise2": {
+        "description": ""
+    },
+    "experienceCardDate2": "nov 2022 - fev 2025",
+    "@experienceCardDate2": {
         "description": ""
     }
 }

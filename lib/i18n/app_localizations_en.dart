@@ -25,4 +25,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get experienceCardTitle => 'Experiences';
+
+  @override
+  String get experienceCardTooltip => 'See on Linkedin';
+
+  @override
+  String get experienceCardRoleLabel => 'Role: ';
+
+  @override
+  String get experienceCardEnterpriseLabel => 'Company: ';
+
+  @override
+  String get experienceCardDateLabel => 'Period: ';
+
+  @override
+  String get experienceCardRole => 'Flutter Developer';
+
+  @override
+  String get experienceCardEnterprise1 => 'Self-employed';
+
+  @override
+  String get experienceCardDate1 => 'nov 2021 - nov 2022';
+
+  @override
+  String get experienceCardEnterprise2 => 'One System Group';
+
+  @override
+  String get experienceCardDate2 => 'nov 2022 - fev 2025';
 }

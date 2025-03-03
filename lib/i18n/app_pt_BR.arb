@@ -8,7 +8,7 @@
     "@contactMe": {
         "description": ""
     },
-    "headerRole": "Desenvolvedor Mobile | Desenvolvedor Flutter",
+    "headerRole": "Desenvolvedor Flutter | Desenvolvedor Mobile | Desenvolvedor Web ",
     "@headerRole": {
         "description": ""
     },
@@ -24,19 +24,23 @@
     "@experienceCardTitle": {
         "description": ""
     },
-    "experienceCardRoleLabel": "Cargo:",
+    "experienceCardTooltip": "Ver no Linkedin",
+    "@experienceCardTooltip": {
+        "description": ""
+    },
+    "experienceCardRoleLabel": "Cargo: ",
     "@experienceCardRoleLabel": {
         "description": ""
     },
-    "experienceCardEnterpriseLabel": "Empresa:",
+    "experienceCardEnterpriseLabel": "Empresa: ",
     "@experienceCardEnterpriseLabel": {
         "description": ""
     },
-    "experienceCardDateLabel": "Período:",
+    "experienceCardDateLabel": "Período: ",
     "@experienceCardDateLabel": {
         "description": ""
     },
-    "experienceCardRole": "Desenvolvedor Mobile Flutter",
+    "experienceCardRole": "Desenvolvedor Flutter",
     "@experienceCardRole": {
         "description": ""
     },

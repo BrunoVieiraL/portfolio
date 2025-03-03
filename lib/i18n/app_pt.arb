@@ -24,15 +24,19 @@
     "@experienceCardTitle": {
         "description": ""
     },
-    "experienceCardRoleLabel": "Cargo:",
+    "experienceCardTooltip": "Ver no Linkedin",
+    "@experienceCardTooltip": {
+        "description": ""
+    },
+    "experienceCardRoleLabel": "Cargo: ",
     "@experienceCardRoleLabel": {
         "description": ""
     },
-    "experienceCardEnterpriseLabel": "Empresa:",
+    "experienceCardEnterpriseLabel": "Empresa: ",
     "@experienceCardEnterpriseLabel": {
         "description": ""
     },
-    "experienceCardDateLabel": "Período:",
+    "experienceCardDateLabel": "Período: ",
     "@experienceCardDateLabel": {
         "description": ""
     },

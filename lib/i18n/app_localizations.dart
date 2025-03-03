@@ -19,7 +19,7 @@ import 'app_localizations_pt.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'l10n/app_localizations.dart';
+/// import 'i18n/app_localizations.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -133,6 +133,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Experiences'**
   String get experienceCardTitle;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'See on Linkedin'**
+  String get experienceCardTooltip;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Role: '**
+  String get experienceCardRoleLabel;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Company: '**
+  String get experienceCardEnterpriseLabel;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Period: '**
+  String get experienceCardDateLabel;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Developer'**
+  String get experienceCardRole;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Self-employed'**
+  String get experienceCardEnterprise1;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'nov 2021 - nov 2022'**
+  String get experienceCardDate1;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'One System Group'**
+  String get experienceCardEnterprise2;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'nov 2022 - fev 2025'**
+  String get experienceCardDate2;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
