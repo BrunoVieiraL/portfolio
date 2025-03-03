@@ -1,6 +1,6 @@
 {
-    "name": "Bruno Vieira Portfolio",
-    "short_name": "Bruno Vieira Portfolio",
+    "name": "portfolio",
+    "short_name": "portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
