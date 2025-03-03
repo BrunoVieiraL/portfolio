@@ -15,7 +15,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get contactMe => 'Contáctame';
 
   @override
-  String get headerRole => 'Desarrollador Móvil | Desarrollador de Flutter';
+  String get headerRole => 'Desarrollador de Flutter | Desarrollador Móvil | Desarrollador Web';
 
   @override
   String get aboutMeCardTitle => 'Acerca de mí';

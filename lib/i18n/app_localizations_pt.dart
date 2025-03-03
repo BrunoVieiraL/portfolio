@@ -15,7 +15,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get contactMe => 'Contate-me';
 
   @override
-  String get headerRole => 'Desenvolvedor Mobile | Desenvolvedor Flutter';
+  String get headerRole => 'Desenvolvedor Flutter | Desenvolvedor Mobile | Desenvolvedor Web';
 
   @override
   String get aboutMeCardTitle => 'Sobre Mim';
@@ -65,7 +65,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get contactMe => 'Contate-me';
 
   @override
-  String get headerRole => 'Desenvolvedor Flutter | Desenvolvedor Mobile | Desenvolvedor Web ';
+  String get headerRole => 'Desenvolvedor Flutter | Desenvolvedor Mobile | Desenvolvedor Web';
 
   @override
   String get aboutMeCardTitle => 'Sobre Mim';

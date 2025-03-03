@@ -113,7 +113,7 @@ abstract class AppLocalizations {
   ///
   ///
   /// In en, this message translates to:
-  /// **'Mobile Developer | Flutter Developer'**
+  /// **'Flutter Developer | Mobile Developer | Web Developer'**
   String get headerRole;
 
   ///
