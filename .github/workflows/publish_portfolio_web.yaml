@@ -58,8 +58,7 @@ jobs:
   
       - name: Copy web build to website branch
         run: |
-          rm -rf ./* 
-          cp -r web-build-artifact/* .
+          cp -r web-build-artifact/. .
 
       - name: Commit and push changes to website branch
         run: |
