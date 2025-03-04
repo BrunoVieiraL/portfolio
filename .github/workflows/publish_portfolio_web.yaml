@@ -23,9 +23,15 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+      
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v4
+        with:
+          channel: stable
+          version: 3.27.0
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
         
       - name: Build web release version
         run: flutter build web --release
@@ -50,6 +56,6 @@ jobs:
           git config --global user.name "BrunoVieiraL"
           git config --global user.email "bruno.leo516@hotmail.com"
           git add .
-          git commit -m "Deploy web build"
-          git push origin website
+          git commit -m "Deploy new web build"
+          git push
       
