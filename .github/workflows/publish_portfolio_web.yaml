@@ -47,9 +47,16 @@ jobs:
         with:
           ref: website
 
+      - name: Download web build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-build
+          path: web-build-artifact/
+
       - name: Copy web build to website branch
         run: |
-          cp -r build/web/* .
+          rm -rf ./* 
+          cp -r web-build-artifact/web/* .
         
       - name: Commit and push changes to website branch
         run: |
