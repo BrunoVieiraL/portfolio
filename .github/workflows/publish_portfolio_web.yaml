@@ -52,14 +52,15 @@ jobs:
         with:
           name: web-build
           path: web-build-artifact/
+
       - name: List artifact contents
         run: ls -lR web-build-artifact/
   
       - name: Copy web build to website branch
         run: |
           rm -rf ./* 
-          cp -r web-build-artifact/web/* .
-        
+          cp -r web-build-artifact/* .
+
       - name: Commit and push changes to website branch
         run: |
           git config --global user.name "BrunoVieiraL"
@@ -67,4 +68,3 @@ jobs:
           git add .
           git commit -m "Deploy new web build"
           git push
-      
