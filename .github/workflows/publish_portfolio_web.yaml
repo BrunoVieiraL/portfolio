@@ -1,9 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Publish Web Portifolio
+name: Publish Web Portfolio
 
 on:
   push:
@@ -16,14 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout main branch
+        uses: actions/checkout@v4
 
-      # Note: This workflow uses the latest stable version of the Dart SDK.
-      # You can specify other versions if desired, see documentation here:
-      # https://github.com/dart-lang/setup-dart/blob/main/README.md
-      # - uses: dart-lang/setup-dart@v1
-      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-      
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+
       - name: Setup Flutter SDK
         uses: flutter-actions/setup-flutter@v4
         with:
@@ -32,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
-        
+
       - name: Build web release version
         run: flutter build web --release
 
@@ -42,6 +35,11 @@ jobs:
           name: web-build
           path: build/web/
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
       - name: Checkout website branch
         uses: actions/checkout@v4
         with:
@@ -52,16 +50,23 @@ jobs:
         with:
           name: web-build
           path: web-build-artifact/
-  
+
       - name: Copy web build to website branch
         run: |
           cp -r web-build-artifact/. .
+          rm -rf web-build-artifact  # Remove o diretório após copiar os arquivos
+
+      - name: Remove old build directory from repository (if exists)
+        run: |
+          git rm -rf --ignore-unmatch web-build-artifact
+
+      - name: Verify directory structure before commit
+        run: ls -la
 
       - name: Commit and push changes to website branch
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Deploy new web build"
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/BrunoVieiraL/portfolio.git
+          git commit -m "Deploy new web build" || echo "No changes to commit"
           git push origin website
