@@ -66,5 +66,5 @@ jobs:
           git config --global user.email "bruno.leo516@hotmail.com"
           git add .
           git commit -m "Deploy new web build"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/BrunoVieiraL/portfolio.git
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/BrunoVieiraL/portfolio.git
           git push
