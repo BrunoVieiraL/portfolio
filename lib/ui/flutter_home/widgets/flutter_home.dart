@@ -49,7 +49,7 @@ class _FlutterHomeState extends State<FlutterHome>
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leadingWidth: width * 0.18,
-        leading: PlatformHandler.isBig(context) ? ContactRow() : null,
+        leading: PlatformHandler.extraLarge(context) ? ContactRow() : null,
         actions: [ActionsRow(viewModel: widget.viewModel)],
       ),
       body: SafeArea(
@@ -72,8 +72,9 @@ class _FlutterHomeState extends State<FlutterHome>
               Text(
                 localizations.headerRole,
                 style: theme.textTheme.titleMedium,
+                textAlign: TextAlign.center,
               ),
-              if (PlatformHandler.isSmall(context)) ...{
+              if (PlatformHandler.compact(context)) ...{
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -117,14 +118,14 @@ class _FlutterHomeState extends State<FlutterHome>
                 ),
               },
               if (PlatformHandler.isAndroid && PlatformHandler.isIOS ||
-                  !PlatformHandler.isSmall(context))
+                  !PlatformHandler.compact(context))
                 PageIndicator(
                   tabController: widget.viewModel.tabController,
                   currentPageIndex: widget.viewModel.tabController.index,
                   onUpdateCurrentPageIndex:
                       widget.viewModel.updateCurrentPageIndex,
                 ),
-              if (!PlatformHandler.isBig(context)) ContactRow(),
+              if (!PlatformHandler.extraLarge(context)) ContactRow(),
             ],
           ),
         ),

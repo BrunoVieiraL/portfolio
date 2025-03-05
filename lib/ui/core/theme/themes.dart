@@ -15,17 +15,17 @@ final class AppTheme {
 
   static TextTheme darkTextTheme = TextTheme(
     headlineLarge: GoogleFonts.inknutAntiqua(
-      fontSize: 48,
+      fontSize: 34,
       color: Color(0xFFF4511E),
       fontWeight: FontWeight.w400,
     ),
     titleMedium: GoogleFonts.inknutAntiqua(
-      fontSize: 25,
+      fontSize: 24,
       color: Colors.white,
       fontWeight: FontWeight.w400,
     ),
     labelMedium: GoogleFonts.inknutAntiqua(
-      fontSize: 22,
+      fontSize: 20,
       color: Colors.white,
       fontWeight: FontWeight.w400,
     ),
