@@ -13,8 +13,8 @@ class ActionsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.sizeOf(context).width;
+    double height = MediaQuery.sizeOf(context).height;
     AppLocalizations localizations = AppLocalizations.of(context)!;
     return Row(
       children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/assets.dart';
+import 'package:portfolio/ui/core/theme/platform_handler.dart';
 import 'package:portfolio/ui/flutter_home/view_model/flutter_home_view_model.dart';
 import 'package:portfolio/i18n/app_localizations.dart';
 import 'widgets.dart';
@@ -39,8 +40,8 @@ class _FlutterHomeState extends State<FlutterHome>
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.sizeOf(context).width;
+    double height = MediaQuery.sizeOf(context).height;
     AppLocalizations localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
@@ -48,7 +49,7 @@ class _FlutterHomeState extends State<FlutterHome>
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leadingWidth: width * 0.18,
-        leading: ContactRow(),
+        leading: PlatformHandler.isBig(context) ? ContactRow() : null,
         actions: [ActionsRow(viewModel: widget.viewModel)],
       ),
       body: SafeArea(
@@ -58,7 +59,7 @@ class _FlutterHomeState extends State<FlutterHome>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 20,
+            spacing: 10,
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage(Assets.me),
@@ -72,33 +73,58 @@ class _FlutterHomeState extends State<FlutterHome>
                 localizations.headerRole,
                 style: theme.textTheme.titleMedium,
               ),
-              SizedBox(
-                width: width * 0.40,
-                height: height * 0.25,
-                child: ListenableBuilder(
-                  listenable: widget.viewModel,
-                  builder: (context, child) => PageView(
-                    controller: widget.viewModel.pageController,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      AboutMeCard(),
-                      ExperienceCard(),
-                      BaseCard(
-                        backgroundColor: Color(0xFF622E9F),
-                        child: Column(
-                          children: [],
+              if (PlatformHandler.isSmall(context)) ...{
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: PageView(
+                      controller: widget.viewModel.pageController,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        AboutMeCard(),
+                        ExperienceCard(),
+                        BaseCard(
+                          backgroundColor: Color(0xFF622E9F),
+                          child: Column(
+                            children: [],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              PageIndicator(
-                tabController: widget.viewModel.tabController,
-                currentPageIndex: widget.viewModel.tabController.index,
-                onUpdateCurrentPageIndex:
-                    widget.viewModel.updateCurrentPageIndex,
-              ),
+              } else ...{
+                SizedBox(
+                  width: width * 0.50,
+                  height: height * 0.30,
+                  child: ListenableBuilder(
+                    listenable: widget.viewModel,
+                    builder: (context, child) => PageView(
+                      controller: widget.viewModel.pageController,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        AboutMeCard(),
+                        ExperienceCard(),
+                        BaseCard(
+                          backgroundColor: Color(0xFF622E9F),
+                          child: Column(
+                            children: [],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              },
+              if (PlatformHandler.isAndroid && PlatformHandler.isIOS ||
+                  !PlatformHandler.isSmall(context))
+                PageIndicator(
+                  tabController: widget.viewModel.tabController,
+                  currentPageIndex: widget.viewModel.tabController.index,
+                  onUpdateCurrentPageIndex:
+                      widget.viewModel.updateCurrentPageIndex,
+                ),
+              if (!PlatformHandler.isBig(context)) ContactRow(),
             ],
           ),
         ),

@@ -12,10 +12,10 @@ class BaseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.sizeOf(context).width;
+    double height = MediaQuery.sizeOf(context).height;
     return Container(
-      width: width * 0.35,
+      width:  width * 0.35,
       height: height * 0.25,
       decoration: BoxDecoration(
         color: backgroundColor,
