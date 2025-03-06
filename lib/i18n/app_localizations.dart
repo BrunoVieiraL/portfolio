@@ -187,6 +187,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'nov 2022 - fev 2025'**
   String get experienceCardDate2;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get toolCardTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

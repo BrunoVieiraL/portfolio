@@ -19,5 +19,6 @@ abstract final class Assets {
   static final String git = 'assets/icons/git.png';
   static final String github = 'assets/icons/github.png';
   static final String postman = 'assets/icons/postman.png';
-  static final String vscode = 'assets/icons/vscode.png';
+  static final String codemagic = 'assets/icons/codemagic.png';
+  static final String figma = 'assets/icons/figma.png';
 }

@@ -106,12 +106,7 @@ class _FlutterHomeState extends State<FlutterHome>
                       children: [
                         AboutMeCard(),
                         ExperienceCard(),
-                        BaseCard(
-                          backgroundColor: Color(0xFF622E9F),
-                          child: Column(
-                            children: [],
-                          ),
-                        ),
+                        ToolsCard(listIcons: widget.viewModel.toolsIcons),
                       ],
                     ),
                   ),

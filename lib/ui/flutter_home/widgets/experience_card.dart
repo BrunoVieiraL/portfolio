@@ -9,8 +9,8 @@ class ExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-
     AppLocalizations localizations = AppLocalizations.of(context)!;
+
     return BaseCard(
       backgroundColor: Color(0xFFD0670B),
       child: Column(

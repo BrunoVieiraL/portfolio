@@ -52,4 +52,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get experienceCardDate2 => 'nov de 2022 - feb de 2025';
+
+  @override
+  String get toolCardTitle => 'Herramientas';
 }

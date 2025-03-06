@@ -52,6 +52,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get experienceCardDate2 => 'nov de 2022 - fev de 2025';
+
+  @override
+  String get toolCardTitle => 'Ferramentas';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -102,4 +105,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get experienceCardDate2 => 'nov de 2022 - fev de 2025';
+
+  @override
+  String get toolCardTitle => 'Ferramentas';
 }

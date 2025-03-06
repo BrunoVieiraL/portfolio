@@ -14,6 +14,7 @@ class ContactRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       mainAxisSize: MainAxisSize.min,
+      spacing: 5,
       children: [
         Text(
           localizations.contactMe,

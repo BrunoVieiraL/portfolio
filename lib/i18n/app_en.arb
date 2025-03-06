@@ -59,5 +59,9 @@
     "experienceCardDate2": "nov 2022 - fev 2025",
     "@experienceCardDate2": {
         "description": ""
+    },
+    "toolCardTitle": "Tools",
+    "@toolCardTitle": {
+        "description": ""
     }
 }

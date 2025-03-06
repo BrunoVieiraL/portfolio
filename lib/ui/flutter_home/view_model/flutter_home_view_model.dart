@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/assets.dart';
 import '../../core/localization/localization.dart';
 import '../../core/theme/themes.dart';
 
@@ -38,4 +39,14 @@ class FlutterHomeViewModel extends ChangeNotifier {
     );
     notifyListeners();
   }
+
+  List<String> toolsIcons = [
+    Assets.flutter,
+    Assets.dart,
+    Assets.git,
+    Assets.github,
+    Assets.postman,
+    Assets.codemagic,
+    Assets.figma,
+  ];
 }
