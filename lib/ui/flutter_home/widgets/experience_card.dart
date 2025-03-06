@@ -17,12 +17,13 @@ class ExperienceCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 20,
         children: [
+          SizedBox(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 localizations.experienceCardTitle,
-                style: theme.textTheme.labelSmall,
+                style: theme.textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
               IconButton(
@@ -49,11 +50,18 @@ class ExperienceCard extends StatelessWidget {
                 Text(
                   localizations.experienceCardRoleLabel +
                       localizations.experienceCardRole,
+                  style: theme.textTheme.labelSmall,
                 ),
-                Text(localizations.experienceCardEnterpriseLabel +
-                    localizations.experienceCardEnterprise1),
-                Text(localizations.experienceCardDateLabel +
-                    localizations.experienceCardDate1),
+                Text(
+                  localizations.experienceCardEnterpriseLabel +
+                      localizations.experienceCardEnterprise1,
+                  style: theme.textTheme.labelSmall,
+                ),
+                Text(
+                  localizations.experienceCardDateLabel +
+                      localizations.experienceCardDate1,
+                  style: theme.textTheme.labelSmall,
+                ),
               ],
             ),
           ),
@@ -63,12 +71,21 @@ class ExperienceCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 3,
               children: [
-                Text(localizations.experienceCardRoleLabel +
-                    localizations.experienceCardRole),
-                Text(localizations.experienceCardEnterpriseLabel +
-                    localizations.experienceCardEnterprise2),
-                Text(localizations.experienceCardDateLabel +
-                    localizations.experienceCardDate2),
+                Text(
+                  localizations.experienceCardRoleLabel +
+                      localizations.experienceCardRole,
+                  style: theme.textTheme.labelSmall,
+                ),
+                Text(
+                  localizations.experienceCardEnterpriseLabel +
+                      localizations.experienceCardEnterprise2,
+                  style: theme.textTheme.labelSmall,
+                ),
+                Text(
+                  localizations.experienceCardDateLabel +
+                      localizations.experienceCardDate2,
+                  style: theme.textTheme.labelSmall,
+                ),
               ],
             ),
           ),

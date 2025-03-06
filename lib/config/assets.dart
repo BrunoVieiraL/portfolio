@@ -21,4 +21,5 @@ abstract final class Assets {
   static final String postman = 'assets/icons/postman.png';
   static final String codemagic = 'assets/icons/codemagic.png';
   static final String figma = 'assets/icons/figma.png';
+  static final String gcp = 'assets/icons/gcp.png';
 }

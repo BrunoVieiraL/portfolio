@@ -18,15 +18,18 @@ class ToolsCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         spacing: 20,
         children: [
+          SizedBox(),
           Text(
             localizations.toolCardTitle,
-            style: theme.textTheme.labelSmall,
+            style: theme.textTheme.labelMedium,
             textAlign: TextAlign.center,
           ),
           Expanded(
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: (listIcons.length / 2).toInt()),
+                crossAxisCount: 4,
+                mainAxisExtent: 150,
+              ),
               itemCount: listIcons.length,
               itemBuilder: (context, index) => Tooltip(
                 triggerMode: TooltipTriggerMode.tap,

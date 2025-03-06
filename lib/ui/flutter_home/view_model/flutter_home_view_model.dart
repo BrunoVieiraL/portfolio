@@ -48,5 +48,6 @@ class FlutterHomeViewModel extends ChangeNotifier {
     Assets.postman,
     Assets.codemagic,
     Assets.figma,
+    Assets.gcp,
   ];
 }
