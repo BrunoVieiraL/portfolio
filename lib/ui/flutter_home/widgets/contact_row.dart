@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/assets.dart';
 import 'package:portfolio/i18n/app_localizations.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/ui/core/theme/app_dimensions.dart';
+import 'package:portfolio/ui/flutter_home/view_model/flutter_home_view_model.dart';
 
 class ContactRow extends StatelessWidget {
-  const ContactRow({super.key});
+  const ContactRow({
+    super.key,
+    required this.homeViewModel,
+  });
+
+  final FlutterHomeViewModel homeViewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,42 +27,28 @@ class ContactRow extends StatelessWidget {
           style: theme.textTheme.labelMedium,
         ),
         GestureDetector(
-          onTap: () async {
-            await launchUrl(Uri.parse('https://wa.me/+5585987288183'));
-          },
+          onTap: homeViewModel.openWhatsApp,
           child: Image.asset(
             Assets.whatsapp,
-            width: 42,
-            height: 42,
+            width: AppDimensions.iconSize,
+            height: AppDimensions.iconSize,
           ),
         ),
         GestureDetector(
-          onTap: () async {
-            await launchUrl(
-              Uri(
-                scheme: 'mailto',
-                path: 'brunoleo.vieira516@gmail.com',
-                queryParameters: {
-                  'subject': '${localizations.experienceCardRole.trim()}❤️'
-                },
-              ),
-            );
-          },
+          onTap: () =>
+              homeViewModel.sendEmail(localizations.experienceCardRole),
           child: Image.asset(
             Assets.gmail,
-            width: 42,
-            height: 42,
+            width: AppDimensions.iconSize,
+            height: AppDimensions.iconSize,
           ),
         ),
         GestureDetector(
-          onTap: () async {
-            await launchUrl(
-                Uri.parse('https://www.linkedin.com/in/bruno-vieiral/'));
-          },
+          onTap: homeViewModel.openLinkedIn,
           child: Image.asset(
             Assets.linkedin,
-            width: 42,
-            height: 42,
+            width: AppDimensions.iconSize,
+            height: AppDimensions.iconSize,
           ),
         ),
       ],

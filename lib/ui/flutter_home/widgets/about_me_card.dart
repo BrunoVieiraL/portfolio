@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/core/theme/colors.dart';
 import 'package:portfolio/ui/flutter_home/widgets/base_card.dart';
 import '../../../i18n/app_localizations.dart';
 
@@ -10,7 +11,7 @@ class AboutMeCard extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     AppLocalizations localizations = AppLocalizations.of(context)!;
     return BaseCard(
-      backgroundColor: Color(0xFF1565C0),
+      backgroundColor: AppColors.blue,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         spacing: 20,

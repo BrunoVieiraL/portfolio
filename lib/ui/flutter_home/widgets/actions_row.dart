@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/i18n/app_localizations.dart';
 import 'package:portfolio/config/assets.dart';
+import 'package:portfolio/i18n/app_localizations.dart';
 import 'package:portfolio/ui/core/localization/localization.dart';
-import 'package:portfolio/ui/core/theme/themes.dart';
+import 'package:portfolio/ui/core/view_model/app_settings_view_model.dart';
 import 'package:portfolio/ui/flutter_home/view_model/flutter_home_view_model.dart';
 
 class ActionsRow extends StatelessWidget {
-  const ActionsRow({super.key, required this.viewModel});
+  const ActionsRow({
+    super.key,
+    required this.homeViewModel,
+    required this.settingsViewModel,
+  });
 
-  final FlutterHomeViewModel viewModel;
+  final FlutterHomeViewModel homeViewModel;
+  final AppSettingsViewModel settingsViewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,7 @@ class ActionsRow extends StatelessWidget {
     double width = MediaQuery.sizeOf(context).width;
     double height = MediaQuery.sizeOf(context).height;
     AppLocalizations localizations = AppLocalizations.of(context)!;
+
     return Row(
       children: [
         InkWell(
@@ -41,7 +47,7 @@ class ActionsRow extends StatelessWidget {
                     ],
                   ),
                   onTap: () =>
-                      viewModel.changeCurrentLocale = AppLocalization.br,
+                      settingsViewModel.currentLocale = AppLocalization.br,
                 ),
                 PopupMenuItem(
                   child: Row(
@@ -53,7 +59,7 @@ class ActionsRow extends StatelessWidget {
                     ],
                   ),
                   onTap: () =>
-                      viewModel.changeCurrentLocale = AppLocalization.en,
+                      settingsViewModel.currentLocale = AppLocalization.en,
                 ),
                 PopupMenuItem(
                   child: Row(
@@ -65,7 +71,7 @@ class ActionsRow extends StatelessWidget {
                     ],
                   ),
                   onTap: () =>
-                      viewModel.changeCurrentLocale = AppLocalization.es,
+                      settingsViewModel.currentLocale = AppLocalization.es,
                 ),
               ],
             );
@@ -89,13 +95,10 @@ class ActionsRow extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
-            viewModel.isDark = !viewModel.isDark;
-            viewModel.changeCurrentTheme = viewModel.isDark
-                ? AppTheme.darkTheme
-                : AppTheme.lightTheme;
+            settingsViewModel.isDark = !settingsViewModel.isDark;
           },
           icon: Icon(
-            viewModel.isDark ? Icons.dark_mode : Icons.light_mode,
+            settingsViewModel.isDark ? Icons.dark_mode : Icons.light_mode,
             color: theme.iconTheme.color,
           ),
         ),

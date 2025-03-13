@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/i18n/app_localizations.dart';
+import 'package:portfolio/ui/core/theme/colors.dart';
 import 'package:portfolio/ui/flutter_home/widgets/base_card.dart';
 
 class ToolsCard extends StatelessWidget {
@@ -13,7 +14,7 @@ class ToolsCard extends StatelessWidget {
     AppLocalizations localizations = AppLocalizations.of(context)!;
 
     return BaseCard(
-      backgroundColor: Color(0xFF622E9F),
+      backgroundColor: AppColors.purple,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         spacing: 20,

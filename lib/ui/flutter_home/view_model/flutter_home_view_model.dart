@@ -1,46 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/app_config.dart';
 import 'package:portfolio/config/assets.dart';
-import '../../core/localization/localization.dart';
-import '../../core/theme/themes.dart';
+import 'package:portfolio/ui/core/theme/app_dimensions.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FlutterHomeViewModel extends ChangeNotifier {
-  late TabController tabController;
+  late final TabController _tabController;
+  late final PageController _pageController;
 
-  late PageController pageController;
+  TabController get tabController => _tabController;
+  PageController get pageController => _pageController;
 
-  ThemeData _currentTheme = AppTheme.darkTheme;
-  ThemeData get currentTheme => _currentTheme;
-  set changeCurrentTheme(ThemeData theme) {
-    _currentTheme = theme;
-    notifyListeners();
+  void initControllers(TickerProvider vsync) {
+    _tabController = TabController(
+      length: 3,
+      vsync: vsync,
+      initialIndex: 0,
+    );
+    _pageController = PageController(initialPage: 0);
   }
 
-  bool isDark = true;
-
-  final List<Locale> supportedLocales = [
-    AppLocalization.br,
-    AppLocalization.en,
-    AppLocalization.es,
-  ];
-
-  Locale _currentLocale = AppLocalization.br;
-  Locale get currentLocale => _currentLocale;
-  set changeCurrentLocale(Locale locale) {
-    _currentLocale = locale;
-    notifyListeners();
+  void disposeControllers() {
+    _tabController.dispose();
+    _pageController.dispose();
   }
 
   void updateCurrentPageIndex(int index) {
-    tabController.index = index;
-    pageController.animateToPage(
+    _tabController.index = index;
+    _pageController.animateToPage(
       index,
-      duration: const Duration(milliseconds: 400),
+      duration:
+          Duration(milliseconds: AppDimensions.defaultAnimationDurationInMs),
       curve: Curves.easeInOut,
     );
     notifyListeners();
   }
 
-  List<String> toolsIcons = [
+  final List<String> toolsIcons = [
     Assets.flutter,
     Assets.dart,
     Assets.git,
@@ -50,4 +46,22 @@ class FlutterHomeViewModel extends ChangeNotifier {
     Assets.figma,
     Assets.gcp,
   ];
+
+  Future<void> openWhatsApp() async {
+    await launchUrl(Uri.parse(AppConfig.whatsappUrl));
+  }
+
+  Future<void> sendEmail(String role) async {
+    await launchUrl(
+      Uri(
+        scheme: 'mailto',
+        path: AppConfig.emailAddress,
+        queryParameters: {'subject': '${role.trim()}❤️'},
+      ),
+    );
+  }
+
+  Future<void> openLinkedIn() async {
+    await launchUrl(Uri.parse(AppConfig.linkedinUrl));
+  }
 }

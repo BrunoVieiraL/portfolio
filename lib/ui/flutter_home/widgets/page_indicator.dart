@@ -12,6 +12,22 @@ class PageIndicator extends StatelessWidget {
   final TabController tabController;
   final void Function(int) onUpdateCurrentPageIndex;
 
+  void _handlePreviousPage() {
+    if (currentPageIndex == 0) {
+      onUpdateCurrentPageIndex(tabController.length - 1);
+    } else {
+      onUpdateCurrentPageIndex(currentPageIndex - 1);
+    }
+  }
+
+  void _handleNextPage() {
+    if (currentPageIndex == tabController.length - 1) {
+      onUpdateCurrentPageIndex(0);
+    } else {
+      onUpdateCurrentPageIndex(currentPageIndex + 1);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
@@ -24,12 +40,7 @@ class PageIndicator extends StatelessWidget {
           IconButton(
             splashRadius: 16.0,
             padding: EdgeInsets.zero,
-            onPressed: () {
-              if (currentPageIndex == 0) {
-                return onUpdateCurrentPageIndex(2);
-              }
-              onUpdateCurrentPageIndex(currentPageIndex - 1);
-            },
+            onPressed: _handlePreviousPage,
             icon: const Icon(Icons.arrow_left_rounded, size: 32.0),
           ),
           TabPageSelector(
@@ -40,12 +51,7 @@ class PageIndicator extends StatelessWidget {
           IconButton(
             splashRadius: 16.0,
             padding: EdgeInsets.zero,
-            onPressed: () {
-              if (currentPageIndex == 2) {
-                return onUpdateCurrentPageIndex(0);
-              }
-              onUpdateCurrentPageIndex(currentPageIndex + 1);
-            },
+            onPressed: _handleNextPage,
             icon: const Icon(Icons.arrow_right_rounded, size: 32.0),
           ),
         ],
