@@ -119,7 +119,6 @@ class _FlutterHomeScreenState extends State<FlutterHomeScreen>
                     !PlatformHandler.compact(context))
                   PageIndicator(
                     tabController: widget.homeViewModel.tabController,
-                    currentPageIndex: widget.homeViewModel.tabController.index,
                     onUpdateCurrentPageIndex:
                         widget.homeViewModel.updateCurrentPageIndex,
                   ),

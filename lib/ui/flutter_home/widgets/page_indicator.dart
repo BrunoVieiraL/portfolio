@@ -4,27 +4,24 @@ class PageIndicator extends StatelessWidget {
   const PageIndicator({
     super.key,
     required this.tabController,
-    required this.currentPageIndex,
     required this.onUpdateCurrentPageIndex,
   });
-
-  final int currentPageIndex;
   final TabController tabController;
   final void Function(int) onUpdateCurrentPageIndex;
 
   void _handlePreviousPage() {
-    if (currentPageIndex == 0) {
-      onUpdateCurrentPageIndex(tabController.length - 1);
+    if (tabController.index == 0) {
+      onUpdateCurrentPageIndex(2);
     } else {
-      onUpdateCurrentPageIndex(currentPageIndex - 1);
+      onUpdateCurrentPageIndex(tabController.index - 1);
     }
   }
 
   void _handleNextPage() {
-    if (currentPageIndex == tabController.length - 1) {
+    if (tabController.index == 2) {
       onUpdateCurrentPageIndex(0);
     } else {
-      onUpdateCurrentPageIndex(currentPageIndex + 1);
+      onUpdateCurrentPageIndex(tabController.index + 1);
     }
   }
 
